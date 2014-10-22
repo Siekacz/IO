@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.15)  22 OCT 2014 09:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.15)  22 OCT 2014 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -348,17 +348,30 @@ LaTeX Font Info:    ... okay on input line 11.
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./spec.toc
-Underfull \hbox (badness 10000) in paragraph at lines 44--1
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 ...chapter}{\numberline {1}Wst\IeC {\k e}p}{2}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--1
 
  []
 
@@ -366,24 +379,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--1
 \tf@toc=\write3
 \openout3 = `spec.toc'.
 
- [1] [2] (./spec.aux) ) 
+ [1] [2
+
+] [3
+
+] [4
+
+] (./spec.aux) ) 
 Here is how much of TeX's memory you used:
- 1556 strings out of 493117
- 17314 string characters out of 6135432
+ 1560 strings out of 493117
+ 17379 string characters out of 6135432
  69845 words of memory out of 5000000
- 5024 multiletter control sequences out of 15000+600000
- 12348 words of font info for 40 fonts, out of 8000000 for 9000
+ 5028 multiletter control sequences out of 15000+600000
+ 13844 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  27i,7n,24p,221b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/pl/p
-lrm.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/pl/plcsc10.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/pl/plr12.pfb>
-Output written on spec.pdf (4 pages, 31739 bytes).
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/pl/plrm.enc
+}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/pl/plcsc10.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/pl/plr12.pfb>
+Output written on spec.pdf (5 pages, 32423 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 34 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
