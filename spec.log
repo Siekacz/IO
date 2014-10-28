@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.27)  28 OCT 2014 22:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2014.10.27)  28 OCT 2014 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,7 +377,7 @@ Here is how much of TeX's memory you used:
 nc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/share/texmf-dist/fo
 nts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plc
 sc10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb>
-Output written on spec.pdf (5 pages, 43058 bytes).
+Output written on spec.pdf (5 pages, 44082 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
