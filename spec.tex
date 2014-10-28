@@ -8,6 +8,7 @@
 \makeatletter
 \newcommand*{\toccontents}{\@starttoc{toc}}
 \makeatother
+\renewcommand*\thesection{\arabic{section}} % zmiana numeracji sekcji 0.X -> X
 \begin{document}
 
 \newcommand{\itab}[1]{\hspace{4em}\rlap{#1}}
@@ -20,7 +21,7 @@
 
 Szymon Czapiga, Bartosz Zasieczny\\[1.0cm]
 
-\LARGE{\textsc{Dokumentacja internetowej  aplikacji wyszukującej połączenia komunikacji miejskiej i dalekobieżnej XYZ}}\\[1.0cm]
+\LARGE{\textsc{Dokumentacja internetowej  aplikacji PRZEWODNIK}}\\[1.0cm]
 
 \begin{normalsize}
 Standardy dokumentacyjne\\[7.0cm]
@@ -42,16 +43,60 @@ Wersja 0.1
     \hline
     2014-10-22 & 0.2 & Aktualizacja & Bartosz Zasieczny \\
     \hline
+    2014-10-27 & 0.3 & Dodanie treści  & Szymon Czapiga \\
+    \hline
     \end{tabular}
   \end{center}
 \end{table}
 \textbf{\large{Spis treści}}\\[0.3cm]
 \toccontents
 \newpage
-\chapter*{Wstęp}
-\section{Cel}
+\section{Wstęp}
+\subsection{Cel systemu}
 	Internetowa aplikacja mobilna do wyszukiwania połączeń komunikacji dalekobieżnej i miejskiej.
-\chapter*{Ogólny opis}
-\chapter*{Specyficzne wymagania}
+\subsection{Zakres systemu}
+	1. Wyszukiwanie połączeń międzymiastowych
+	2. Wyszukiwanie połączeń w obrębie danego miasta(po adresach)
+	3. Łączenie połączeń międzymiastowych i miejskich w trasy “od adresu do adresu”
+	4. Obsługa połączeń autokarowych, kolejowych i lotniczych w komunikacji międzymiastowej
+\subsection{Definicje, akronimy i skróty}
+	1. Użytkownik - osoba korzystająca z aplikacji
+	2. Przewoźnik 
+	3. Etap podróży - podstawowa jednostka informacji w systemie, zawierająca dane nt. bezpośredniego połączenia miedzy dwoma punktami  
+	4. Trasa - połączone ze sobą w odpowiedniej kolejności etapy podróży
+\subsection{Uzasadnienie rynkowe zapotrzebowania na system}
+	
+\subsection{Krótki przegląd podobnych rozwiązań}
+	1. e-podróżnik
+	2. jakdojade
+%-------------------------------	
+\section{Ogólny opis}
+\subsection{Podstawowe funkcje}
+	1. Wyszukiwanie połączeń
+	2. Wyświetlanie informacji o połączeniach
+\subsection{Podstawowe cechy}
+\subsection{Ustalenia dotyczące środowiska}
+\subsection{Relacje do innych systemów}
+\subsection{Ogólne ograniczenia}
+\subsection{Opis architektury w tym model systemu (podstawowe elementy i powiązania między nimi)}
+\subsection{Oszacowanie pracochłonności}
+\subsection{Oszacowanie kosztów}
+\subsection{Harmonogram ( w postaci wykresu Gantta)}
+%-------------------------------
+\section{Specyficzne wymagania}
+\subsection{Wymagania dotyczące funkcji systemu}
+\subsection{Wymagania dotyczące wydajności systemu}
+\subsection{Wymagania dotyczące zewnętrznych interfejsów}
+\subsection{Wymagania dotyczące wykonywanych operacji}
+\subsection{Wymagania dotyczące wymaganych zasobów}
+\subsection{Wymagania dotyczące sposobów weryfikacji}
+\subsection{Wymagania dotyczące sposobów testowania}
+\subsection{Wymagania dotyczące dokumentacji}
+\subsection{Wymagania dotyczące ochrony informacji o projekcie}
+\subsection{Wymagania dotyczące przenośności}
+\subsection{Wymagania dotyczące jakości}
+\subsection{Wymagania dotyczące niezawodności}
+\subsection{Wymagania dotyczące pielęgnacyjności}
+\subsection{Wymagania dotyczące bezpieczeństwa systemu}
 
 \end{document}
