@@ -21,10 +21,9 @@
 
 Szymon Czapiga, Bartosz Zasieczny\\[1.0cm]
 
-\LARGE{\textsc{Dokumentacja internetowej  aplikacji PRZEWODNIK}}\\[1.0cm]
+\LARGE{\textsc{Dokumentacja aplikacji internetowej PRZEWODNIK}}\\[8.0cm]
 
 \begin{normalsize}
-Standardy dokumentacyjne\\[7.0cm]
 
 Wrocław, 15 października 2014\\[0.5cm]
 Wersja 0.5
@@ -57,108 +56,95 @@ Wersja 0.5
 \newpage
 \section{Wstęp}
 \subsection{Cel systemu}
-	Internetowa aplikacja mobilna do wyszukiwania połączeń komunikacji dalekobieżnej i miejskiej.
+	Aplikacja umożliwiająca wyszukiwanie połączeń komunikacji międzymiastowej i miejskiej jak również przeglądanie statystyk podróży.
 \subsection{Zakres systemu}
-\begin{enumerate}
-	\item Wyszukiwanie połączeń międzymiastowych
-	\item Wyszukiwanie połączeń w obrębie danego miasta(po adresach)
-	\item Łączenie połączeń międzymiastowych i miejskich w trasy
-	\item Obsługa połączeń autokarowych, kolejowych i lotniczych w komunikacji międzymiastowej
-\end{enumerate}
+	Ta sekcja opisuje podstawowe możliwości aplikacji.\\[0.3cm]
+	Aplikacja pozwala na wyszukiwanie połączeń międzymiastowych jak również połączeń w obrębie danego miasta (po adresach). Jest w stanie łączyć te dwa typy połączeń w trasy. Obsługuje ona połączenia autokarowe, kolejowe oraz lotnicze (w komunikacji międzymiastowej).
 \subsection{Definicje, akronimy i skróty}
+	W tej sekcji zostaną wyjaśnione definicje, akronimy i skróty używane w dalszej części dokumentacji.
 \begin{enumerate}
-	\item Użytkownik - osoba korzystająca z aplikacji
-	\item Przewoźnik - firma oferująca usługi przewozu na danym etapie podróży
-	\item Etap podróży - podstawowa jednostka informacji w systemie, zawierająca dane na temat bezpośredniego połączenia między dwoma adresami.
-	\item Przesiadka - czas pomiędzy dwoma etapami podróży
-	\item Trasa - połączone ze sobą w odpowiedniej kolejności etapy podróży
+	\item Użytkownik -- osoba korzystająca z aplikacji
+	\item Przewoźnik -- firma oferująca usługi przewozu na danym etapie podróży
+	\item Etap podróży -- podstawowa jednostka informacji w systemie, zawierająca dane na temat bezpośredniego połączenia między dwoma adresami.
+	\item Przesiadka -- czas pomiędzy dwoma etapami podróży
+	\item Trasa -- połączone ze sobą w odpowiedniej kolejności etapy podróży
+	\item Ulubione trasy -- trasy oznaczone przez użytkownika w celu szybszego wyszukiwania połączeń
 \end{enumerate}
 \subsection{Uzasadnienie rynkowe zapotrzebowania na system}
-	Istnieje wiele aplikacji realizujących podobne funkcje jednak skupiają się zwykle tylko na konkretnym typie podróży - miejskiej bądź międzymiastowej. Proponowana aplikacja ma za zadanie połączyć te dwie funkcjonalności i udostępnić użytkownikowi kompleksową usługę wyszukiwania tras. 
+	Istnieje wiele aplikacji realizujących podobne funkcje jednak skupiają się zwykle tylko na konkretnym typie podróży - miejskiej lub międzymiastowej. Proponowana aplikacja ma za zadanie połączyć te dwie funkcjonalności i udostępnić użytkownikowi kompleksową usługę wyszukiwania tras. Co więcej użytkownik będzie mógł dodawać wybrane trasy do ulubionych, co umożliwi w przyszłości szybsze wyszukiwanie. Dostępny będzie również moduł ze statystykami odbytych podróży.
+\newpage
 \subsection{Krótki przegląd podobnych rozwiązań}
 \begin{enumerate}
-	\item e-podróżnik.pl - aplikacja oferuje wyszukiwanie połączeń PKS, PKP, MPK i prywatnych przewoźników autobusowych w obrębie kraju, międzynarodowych połączeń autokarowych oraz połączeń lotniczych. Jej wadą jest rozbicie funkcjonalności na różne wyszukiwarki oraz nieergonomiczny interface
-	\item jakdojade.pl - wyszukuje jedynie połączenia w obrębie danego miasta
-	\item rozklad-pkp.pl - wyszukuje jedynie połączenia kolejowe
+	\item e-podróżnik.pl - aplikacja umożliwia wyszukiwanie połączeń PKS, PKP, MPK i prywatnych przewoźników autobusowych w obrębie kraju, międzynarodowych połączeń autokarowych oraz połączeń lotniczych. Jej wadą jest rozbicie funkcjonalności na różne wyszukiwarki oraz nieergonomiczny interfejs
+	\item jakdojade.pl - wyszukuje połączenia w obrębie danego miasta
+	\item rozklad-pkp.pl - wyszukuje połączenia kolejowe
 \end{enumerate}
-\newpage
 \section{Ogólny opis}
 \subsection{Podstawowe funkcje}
-\begin{enumerate}
-	\item  Wyszukiwanie połączeń
-	\item  Wyświetlanie informacji o połączeniach
-\end{enumerate}
+	Podstawowymi zadaniami realizowanymi przez aplikację są:
+	\begin{enumerate}
+	 	\item Wyszukiwanie połączeń
+	 	\item Wyświetlanie informacji o połączeniach
+	 	\item Zbieranie danych i wyświetlanie statystyk podróży.
+	\end{enumerate}
 \subsection{Podstawowe cechy}
-	Aplikacja będzie:
-	\begin{enumerate}
-		\item Szybka
-		\item Intuicyjna
-		\item Ergonomiczna
-		\item Przenośna
-		\item Posiadała minimalistyczny interfejs
-	\end{enumerate}
+	Aplikacja będzie szybka (krótki czas zwracania wyników wyszukiwania), intuicyjna (nawet osoby starsze mające problem z obsługą komputera powinny sobie poradzić z używaniem jej), ergonomiczna (interfejs powinien być prosty -- przejrzysty), przenośna (będzie można uruchomić ją na każdym urządzeniu spełniającym podstawowe wymagania opisane w dalszej części).
 \subsection{Ustalenia dotyczące środowiska}
-	Przeglądarka internetowa obsługująca:
-	\begin{enumerate}
-		\item HTM5
-		\item CSS3
-		\item JavaScript
-	\end{enumerate}
-	Użytkownik nie może korzystać z programów typu Adblock Plus(blokujących reklamy) i NoScript(wyłączających obsługę JavaScript w przeglądarce)
+	Do działania aplikacji wymagana będzie dowolna przeglądarka internetowa obsługująca HTML5, CSS3 oraz JavaScript. Użytkownik nie może korzystać z programów typu Adblock Plus (blokujących reklamy) i NoScript (wyłączających obsługę JavaScript w przeglądarce).
 \subsection{Relacje do innych systemów}
+	Aplikacja do części zadań będzie wykorzystywała zewnętrzne systemy. Ta sekcja opisuje ogólne powiązania między nimi.
 \begin{enumerate}
 	\item Dane o etapach podróży będą pobierane z serwisów odpowiednich przewoźników
-	\item Wyświetlanie danych na mapie będzie realizowane przez maps.google.com
-	\item Będą istniały opcje społecznościowe dla takich serwisów jak Facebook, Google+
+	\item Wyświetlanie danych na mapie jest realizowane przez maps.google.com
+	\item Będą istniały opcje społecznościowe dla takich serwisów jak Facebook i Google+
 	\item Wykorzystanie systemu GPS do odczytywania obecnej lokalizacji
 \end{enumerate}
-\subsection{Ogólne ograniczenia}	
+\subsection{Ogólne ograniczenia}
+	Aplikacja ze względu na swoją złożoność jak również ilość powiązanych systemów zewnętrznych posiada następujące ograniczenia:	
 \begin{enumerate}
-	\item Informacje o opóźnieniach
-	\item Informacje o cenie biletu
-	\item Informacje o dostępności miejsc
-	\item Bezpośredni zakup biletu
+	\item Informacje o opóźnieniach -- dane te nie są udostępniane przez wszystkich przewoźników w związku z tym nie ma możliwości informowania o nich w naszej aplikacji
+	\item Informacje o cenie biletu -- ze względu na ilość różnych zniżek jak również nieuznawanie ich przez część przewoźników nie ma możliwości obliczenia ceny biletu
+	\item Informacje o dostępności miejsc -- część przewoźników nie posiada systemu rezerwacji lub informowania o ilości wolnych miejsc
+	\item Bezpośredni zakup biletu -- część przewoźników sprzedaje bilety tylko bezpośrednio w pojeździe, przed wyjazdem
 \end{enumerate}
-\subsection{Opis architektury w tym model systemu (podstawowe elementy i powiązania między nimi)}
+\subsection{Opis architektury}
 Aplikacja będzie składać się z dwóch, niezależnych od siebie, komponentów:
-\begin{itemize}
+\begin{enumerate}
 	\item Aplikacja działająca w przeglądarce internetowej.
 	\item Aplikacja serwerowa, stanowiąca źródło danych dla aplikacji przeglądarkowej.
-\end{itemize} 
-	Aplikacja przeglądarkowa będzie łączyć się z aplikacją serwerową, która będzie stanowić interfejs do bazy danych i zewnętrznych źródeł danych.
+\end{enumerate} 
+	Aplikacja przeglądarkowa będzie łączyć się z aplikacją serwerową, będącą interfejsem do bazy danych i zewnętrznych źródeł danych.
 \subsection{Oszacowanie pracochłonności}
-\begin{itemize}
-	\item Opracowanie projektu interfejsu użytkownika - 2 tygodnie.
-	\item Opracowanie wstępnej wersji aplikacji przeglądarkowej, bez aplikacji serwerowej - 1 miesiąc.
-	\item Testy wstępnej wersji interfejsu graficznego na użytkownikach - 2 tygodnie.
-	\item Poprawki specyfikacji i implementacji interfejsu graficznego, na podstawie wniosków z testów na użytkownikach - miesiąc.
-	\item Opracowanie wstępnej wersji aplikacji serwerowej - 1 miesiąc.
-	\item Testy integracyjne aplikacji serwerowej i przeglądarkowej - 2 tygodnie.
-	\item Poprawki specyfikacji i implementacji aplkacji przeglądarkowej i serwerowej, na podstawie wniosków z testów integracyjnych - 1 miesiąc.
-	\item Testy integracyjne całości systemu na użytkownikach - 1 miesiąc.
-	\item Końcowe poprawki obu aplikacji - 2 tygodnie 
-\end{itemize}
+\begin{enumerate}
+	\item Opracowanie projektu interfejsu użytkownika -- 2 tygodnie.
+	\item Opracowanie wstępnej wersji aplikacji przeglądarkowej, bez aplikacji serwerowej -- 1 miesiąc.
+	\item Testy wstępnej wersji interfejsu graficznego na użytkownikach -- 2 tygodnie.
+	\item Poprawki specyfikacji i implementacji interfejsu graficznego, na podstawie wniosków z testów na użytkownikach -- 1 miesiąc.
+	\item Opracowanie wstępnej wersji aplikacji serwerowej -- 1 miesiąc.
+	\item Testy integracyjne aplikacji serwerowej i przeglądarkowej -- 2 tygodnie.
+	\item Poprawki specyfikacji i implementacji aplikacji przeglądarkowej i serwerowej, na podstawie wniosków z testów integracyjnych -- 1 miesiąc.
+	\item Testy integracyjne całości systemu na użytkownikach -- 1 miesiąc.
+	\item Końcowe poprawki obu aplikacji -- 2 tygodnie 
+\end{enumerate}
 \subsection{Oszacowanie kosztów}
 \begin{enumerate}
-	\item Zatrudnienie programisty HTML5/CSS/JS na okres 3 miesięcy - 15,000 zł
-	\item Zatrudnienie programisty aplikacji serwerowej na okres 3-ch miesięcy - 18,000 zł
-	\item Zatrudnienie grafika na okres 1-go miesiąca - 4,000 zł
-	\item Zatrudnienie specjalisty d/s marketingu na okres 12-tu miesięcy - 20,000 zł
-	\item Wynajęcie serwera na 1-szy rok działaności - 2,000 zł
+	\item Zatrudnienie programisty HTML5/CSS/JS na okres trzech miesięcy - 15,000 zł
+	\item Zatrudnienie programisty aplikacji serwerowej na okres trzech miesięcy - 18,000 zł
+	\item Zatrudnienie grafika na okres miesiąca - 4,000 zł
+	\item Zatrudnienie specjalisty w zakresie marketingu na okres dwunastu miesięcy - 20,000 zł
+	\item Wynajęcie serwera na pierwszy rok działalności - 2,000 zł
 	\item Wykupienie kampanii reklamowej w Internecie - 2,000 zł
 	\item Usługi prawnicze - 12,000 zł
 	\item Wynajęcie firmy testującej bezpieczeństwo aplikacji - 10,000 zł
 
 Łącznie: 83,000 zł
 \end{enumerate}
-%\subsection{Harmonogram ( w postaci wykresu Gantta)}
 \newpage
 \section{Specyficzne wymagania}
-%\subsection{Wymagania dotyczące funkcji systemu}
 \subsection{Wymagania dotyczące wydajności systemu}
 	Aplikacja ma zacząć zwracać pierwsze wyniki w czasie mniejszym niż 5 sekund. Reszta wyników może być generowana w tle i uzupełniana w czasie kiedy użytkownik będzie już przeglądał pierwsze wyniki.
 \subsection{Wymagania dotyczące zewnętrznych interfejsów}
-Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfejsu programistycznego aplikacji serwerowej, dostępnego przez protokół HTTP. Interfejs ten będzie umożliwiać połączenie się z aplikacją serwerową dowolnemu typowi aplikacji (natywna dla komputerów PC, mobilna, internetowa), także dla aplikacji podmiotów trzecich - w tym wypadku wymagana będzie identyfikacja każdej aplikacji korzystającej z udostępnionego interfejsu programistycznego.
+Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfejsu programistycznego aplikacji serwerowej, dostępnego w protokole HTTP. Interfejs ten będzie umożliwiać połączenie z aplikacją serwerową dowolnemu typowi aplikacji (binarna dla komputerów PC, mobilna, internetowa), także dla aplikacji podmiotów trzecich - w tym wypadku wymagana będzie identyfikacja każdej aplikacji korzystającej z udostępnionego interfejsu programistycznego.
 \subsection{Wymagania dotyczące wykonywanych operacji}
 	Aplikacja powinna:
 	\begin{enumerate}	
@@ -169,7 +155,7 @@ Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfe
 		\item Informować o przesiadkach
 		\item Przekazywać dane kontaktowe przewoźnika dla każdego etapu podróży 
 	\end{enumerate}
-\subsection{Wymagania dotyczące wymaganych zasobów}
+\subsection{Wymagania dotyczące zasobów}
 \begin{enumerate}
 	\item Zespół programistów
 	\item Zespół testerów
