@@ -26,7 +26,7 @@ Szymon Czapiga, Bartosz Zasieczny\\[1.0cm]
 \begin{normalsize}
 
 Wrocław, 15 października 2014\\[0.5cm]
-Wersja 0.9
+Wersja 0.5
 \end{normalsize}
 \end{center}
 \end{titlepage}
@@ -34,6 +34,8 @@ Wersja 0.9
 \begin{table}[h1]
  \itab \textit{Tabela 0.} Historia zmian dokonanych w dokumencie
   \begin{center}
+
+
     \begin{tabular}{| c | c | c | c |}
     \hline
     Data & Numer Wersji & Opis & Autor \\
@@ -47,14 +49,6 @@ Wersja 0.9
     2014-10-28 & 0.4 & Korekta numeracji działów & Szymon Czapiga \\
     \hline
     2014-10-29 & 0.5 & Uzupełnienie treści & Szymon Czapiga, Bartosz Zasieczny \\
-    \hline
-    2014-12-10 & 0.6 & Uzupełnienie treści & Szymon Czapiga, Bartosz Zasieczny \\
-    \hline
-    2015-01-09 & 0.7 & Korekta & Szymon Czapiga\\
-    \hline
-    2015-01-12 & 0.8 & Uzupełnienie treści & Bartosz Zasieczny \\
-    \hline
-    2015-01-13 & 0.9 & Korekta & Szymon Czapiga, Bartosz Zasieczny \\
     \hline
     \end{tabular}
   \end{center}
@@ -152,30 +146,45 @@ Aplikacja będzie składać się z dwóch, niezależnych od siebie, komponentów
 \subsection{Wymagania dotyczące wydajności systemu}
 	Aplikacja ma zacząć zwracać pierwsze wyniki w czasie mniejszym niż 5 sekund. Reszta wyników może być generowana w tle i uzupełniana w czasie kiedy użytkownik będzie już przeglądał pierwsze wyniki.
 \subsection{Wymagania dotyczące zewnętrznych interfejsów}
-Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfejsu programistycznego aplikacji serwerowej, dostępnego w protokole HTTP. Interfejs ten będzie umożliwiać połączenie z aplikacją serwerową dowolnemu typowi aplikacji (binarna dla komputerów PC, mobilna, internetowa), także dla aplikacji podmiotów trzecich -- w tym wypadku wymagana będzie identyfikacja każdej aplikacji korzystającej z udostępnionego interfejsu (programistycznego).
+Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfejsu programistycznego aplikacji serwerowej, dostępnego w protokole HTTP. Interfejs ten będzie umożliwiać połączenie z aplikacją serwerową dowolnemu typowi aplikacji (binarna dla komputerów PC, mobilna, internetowa), także dla aplikacji podmiotów trzecich - w tym wypadku wymagana będzie identyfikacja każdej aplikacji korzystającej z udostępnionego interfejsu programistycznego.
 \subsection{Wymagania dotyczące wykonywanych operacji}
-	Aplikacja powinna wyszukiwać połączenia pomiędzy dwoma adresami w danym mieście jak również pomiędzy dwoma miastami. W razie potrzeby łączyć wiele różnych etapów podróży aby otrzymać trasę wybraną przez użytkownika. Powinna udostępniać takie informacje jak czas podróży, godzina i miejsce przesiadek oraz dane kontaktowe przewoźnika dla każdego etapu podróży. Aplikacja będzie udostępniać panel ze statystykami poprzednich podróży oraz panel opcji społecznościowych.
+	Aplikacja powinna:
+	\begin{enumerate}	
+		\item Wyszukiwać połączenia pomiędzy dwoma adresami w danym mieście
+		\item Wyszukiwać połączenia pomiędzy dwoma miastami
+		\item W razie potrzeby łączyć wiele różnych etapów podróży w trasę
+		\item Informować o czasie podróży
+		\item Informować o przesiadkach
+		\item Przekazywać dane kontaktowe przewoźnika dla każdego etapu podróży 
+	\end{enumerate}
 \subsection{Wymagania dotyczące zasobów}
 \begin{enumerate}
 	\item Zespół programistów
-	\item Zespół testujący oprogramowanie
+	\item Zespół testerów
 	\item Grafik
 	\item Specjalista do kontaktu z klientami
 	\item Serwery
 \end{enumerate}
+%\subsection{Wymagania dotyczące sposobów weryfikacji}
 \subsection{Wymagania dotyczące sposobów testowania}
 Testy będą podzielone na trzy grupy:
-\begin{itemize}
-	\item Automatyczne testy jednostkowe
-	\item Automatyczne testy integracyjne
-	\item Testy na użytkownikach
-\end{itemize}
+\begin{enumerate}
+	\item Automatyczne testy jednostkowe -- testowanie każdej klasy z osobna, w całkowitej separacji od innych klas. Będą to testy tzw. "białej skrzynki", pisane będą przez dewelopera odpowiedzialnego za implementację danej klasy.
+	\item Automatyczne testy integracyjne -- testy obejmujące wszystkie moduły aplikacji, przeprowadzane w metodzie "czarnej skrzynki", pisane przez deweloperów projektu oraz zewnętrzą firmę przeprowadzającą testy. Testy te będą symulować czynności użytkownika, zdefiniowane w scenariuszach testowych.
+	\item Testy z użytkownikami -- testy, podczas których reprezentatywna grupa losowych osób będzie wykonywać zadane scenariusze, następnie w krótkich formularzach wyrażą swoje opinie na temat interfejsu użytkownika i ogólnej użyteczności programu. Na tyms topniu testów będą porównywane różne wersje poszczególnych elementów interfejsu użytkownika (AB testy) pod kątem ergonomii i ilości konwersji. Testy będą przeprowadzane przez zewnętrzną firmę.
+\end{enumerate}
+%\subsection{Wymagania dotyczące dokumentacji}
+\subsection{Wymagania dotyczące ochrony informacji o projekcie}
+	Prawne zobowiązania pracowników do nieupubliczniania informacji o projekcie.
+\subsection{Wymagania dotyczące przenośności}
+	Aplikacja może być uruchamiana na każdym urządzeniu spełniającym wymagania z sekcji "Ustalenia dotyczące środowiska".
+%\subsection{Wymagania dotyczące jakości}
 \subsection{Wymagania dotyczące niezawodności}
 \begin{enumerate}
 	\item Aplikacja będzie udostępniana przez wiele serwerów, więc w razie awarii jednego z nich dalej będzie aktywna.
-	\item Baza danych połączeń będzie systematycznie aktualizowana, co zapobiegnie wyświetlaniu tras niemożliwych do zrealizowania.
+	\item Baza danych połączeń będzie systematycznie aktualizowana co zapobiegnie wyświetlaniu tras niemożliwych do zrealizowania.
 \end{enumerate}
-\subsection{Wymagania dotyczące etapu eksploatacji}
+\subsection{Wymagania dotyczące pielęgnacyjności}
 \begin{enumerate}
 	\item Utrzymanie zespołu programistów, testerów i grafika do rozwijania i konserwacji aplikacji
 	\item Regularne testy aplikacji oraz serwerów
@@ -183,5 +192,5 @@ Testy będą podzielone na trzy grupy:
 	\item Wdrażanie nowych technologii oraz rozszerzanie funkcjonalności
 \end{enumerate}	
 \subsection{Wymagania dotyczące bezpieczeństwa systemu}
-	Zatrudnienie specjalnej zewnętrznej firmy do regularnego wykonywania testów bezpieczeństwa zarówno aplikacji jak i serwerów. Ważnym elementem dla bezpieczeństwa systemu jest prawne zobowiązanie pracowników do nieupubliczniania informacji o projekcie.
+	Zatrudnienie specjalnej zewnętrznej firmy do regularnego przeprowadzania testów bezpieczeństwa zarówno aplikacji jak i serwerów.
 \end{document}
