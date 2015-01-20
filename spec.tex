@@ -25,8 +25,8 @@ Szymon Czapiga, Bartosz Zasieczny\\[1.0cm]
 
 \begin{normalsize}
 
-Wrocław, 15 października 2014\\[0.5cm]
-Wersja 0.9
+Wrocław, 20 stycznia 2015\\[0.5cm]
+Wersja 1.0
 \end{normalsize}
 \end{center}
 \end{titlepage}
@@ -55,6 +55,8 @@ Wersja 0.9
     2015-01-12 & 0.8 & Uzupełnienie treści & Bartosz Zasieczny \\
     \hline
     2015-01-13 & 0.9 & Korekta & Szymon Czapiga, Bartosz Zasieczny \\
+    \hline
+    2015-01-20 & 1.0 & Korekta & Szymon Czapiga, Bartosz Zasieczny \\
     \hline
     \end{tabular}
   \end{center}
@@ -87,6 +89,7 @@ Wersja 0.9
 	\item jakdojade.pl - wyszukuje połączenia w obrębie danego miasta
 	\item rozklad-pkp.pl - wyszukuje połączenia kolejowe
 \end{enumerate}
+\newpage
 \section{Ogólny opis}
 \subsection{Podstawowe funkcje}
 	Podstawowymi zadaniami realizowanymi przez aplikację są:
@@ -107,6 +110,7 @@ Wersja 0.9
 	\item Będą istniały opcje społecznościowe dla takich serwisów jak Facebook i Google+
 	\item Wykorzystanie systemu GPS do odczytywania obecnej lokalizacji
 \end{enumerate}
+\newpage
 \subsection{Ogólne ograniczenia}
 	Aplikacja ze względu na swoją złożoność jak również ilość powiązanych systemów zewnętrznych posiada następujące ograniczenia:	
 \begin{enumerate}
@@ -163,13 +167,14 @@ Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfe
 	\item Specjalista do kontaktu z klientami
 	\item Serwery
 \end{enumerate}
+\newpage
 \subsection{Wymagania dotyczące sposobów testowania}
 Testy będą podzielone na trzy grupy:
-\begin{itemize}
-	\item Automatyczne testy jednostkowe
-	\item Automatyczne testy integracyjne
-	\item Testy na użytkownikach
-\end{itemize}
+\begin{enumerate}
+	\item Automatyczne testy jednostkowe -- testowanie każdej klasy z osobna, w całkowitej separacji od innych klas. Będą to testy tzw. "białej skrzynki", pisane będą przez dewelopera odpowiedzialnego za implementację danej klasy.
+	\item Automatyczne testy integracyjne -- testy obejmujące wszystkie moduły aplikacji, przeprowadzane w metodzie "czarnej skrzynki", pisane przez deweloperów projektu oraz zewnętrzą firmę przeprowadzającą testy. Testy te będą symulować czynności użytkownika, zdefiniowane w scenariuszach testowych.
+	\item Testy z użytkownikami -- testy, podczas których reprezentatywna grupa losowych osób będzie wykonywać zadane scenariusze, następnie w krótkich formularzach wyrażą swoje opinie na temat interfejsu użytkownika i ogólnej użyteczności programu. Na tyms topniu testów będą porównywane różne wersje poszczególnych elementów interfejsu użytkownika (AB testy) pod kątem ergonomii i ilości konwersji. Testy będą przeprowadzane przez zewnętrzną firmę.
+\end{enumerate}
 \subsection{Wymagania dotyczące niezawodności}
 \begin{enumerate}
 	\item Aplikacja będzie udostępniana przez wiele serwerów, więc w razie awarii jednego z nich dalej będzie aktywna.
