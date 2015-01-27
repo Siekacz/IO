@@ -8,8 +8,10 @@
 \makeatletter
 \newcommand*{\toccontents}{\@starttoc{toc}}
 \makeatother
-\renewcommand*\thesection{\arabic{section}} % zmiana numeracji sekcji 0.X -> X
+\renewcommand*{\thesection}{\arabic{section}}
 \usepackage[dotinlabels]{titletoc}
+\usepackage{secdot}
+\sectiondot{subsection}
 \newcommand{\blankpage}{
 \newpage
 \thispagestyle{empty}
@@ -73,43 +75,44 @@ Wersja 1.0
 \newpage
 \section{Wstęp}
 \subsection{Cel systemu}
-	Aplikacja umożliwiająca wyszukiwanie połączeń komunikacji międzymiastowej i miejskiej jak również przeglądanie statystyk podróży.
+	Aplikacja Przewodnik umożliwiająca wyszukiwanie połączeń komunikacji międzymiastowej i miejskiej jak również przeglądanie statystyk podróży.
 \subsection{Zakres systemu}
-	Ta sekcja opisuje podstawowe możliwości aplikacji.\\[0.3cm]
-	Aplikacja pozwala na wyszukiwanie połączeń międzymiastowych jak również połączeń w obrębie danego miasta (po adresach). Jest w stanie łączyć te dwa typy połączeń w trasy. Obsługuje ona połączenia autokarowe, kolejowe oraz lotnicze (w komunikacji międzymiastowej).
+	Przewodnik pozwala na wyszukiwanie połączeń międzymiastowych, jak również połączeń w obrębie danego miasta. W razie potrzeby łączy te dwa typy połączeń w trasy. Obsługuje ona połączenia autokarowe, kolejowe oraz lotnicze (w komunikacji międzymiastowej).
 \subsection{Definicje, akronimy i skróty}
-	W tej sekcji zostaną wyjaśnione definicje, akronimy i skróty używane w dalszej części dokumentacji.
+	W tym podrozdziale zostaną wyjaśnione definicje, akronimy i skróty używane w dalszej części dokumentacji.
 \begin{enumerate}
-	\item Użytkownik -- osoba korzystająca z aplikacji
-	\item Przewoźnik -- firma oferująca usługi przewozu na danym etapie podróży
+	\item Użytkownik -- osoba korzystająca z aplikacji.
+	\item Przewoźnik -- firma oferująca usługi przewozu na danym etapie podróży.
 	\item Etap podróży -- podstawowa jednostka informacji w systemie, zawierająca dane na temat bezpośredniego połączenia między dwoma adresami.
-	\item Przesiadka -- czas pomiędzy dwoma etapami podróży
-	\item Trasa -- połączone ze sobą w odpowiedniej kolejności etapy podróży
-	\item Ulubione trasy -- trasy oznaczone przez użytkownika w celu szybszego wyszukiwania połączeń
+	\item Przesiadka -- czas pomiędzy dwoma etapami podróży.
+	\item Trasa -- połączone ze sobą w odpowiedniej kolejności etapy podróży.
+	\item Ulubione trasy -- trasy oznaczone przez użytkownika w celu szybszego wyszukiwania połączeń.
 \end{enumerate}
 \subsection{Uzasadnienie rynkowe zapotrzebowania na system}
-	Istnieje wiele aplikacji realizujących podobne funkcje jednak skupiają się zwykle tylko na konkretnym typie podróży - miejskiej lub międzymiastowej. Proponowana aplikacja ma za zadanie połączyć te dwie funkcjonalności i udostępnić użytkownikowi kompleksową usługę wyszukiwania tras. Co więcej użytkownik będzie mógł dodawać wybrane trasy do ulubionych, co umożliwi w przyszłości szybsze wyszukiwanie. Dostępny będzie również moduł ze statystykami odbytych podróży.
+	Istnieje wiele aplikacji realizujących podobne funkcje, jednak skupiają się zwykle tylko na konkretnym typie podróży -- miejskiej lub międzymiastowej. Przewodnik ma za zadanie połączyć te dwie funkcje i udostępnić użytkownikowi kompleksową usługę wyszukiwania tras. Co więcej, użytkownik będzie mógł dodawać wybrane trasy do ulubionych, co umożliwi w przyszłości szybsze wyszukiwanie. Dostępny będzie również moduł ze statystykami odbytych podróży.
 \newpage
 \subsection{Krótki przegląd podobnych rozwiązań}
 \begin{enumerate}
-	\item e-podróżnik.pl - aplikacja umożliwia wyszukiwanie połączeń PKS, PKP, MPK i prywatnych przewoźników autobusowych w obrębie kraju, międzynarodowych połączeń autokarowych oraz połączeń lotniczych. Jej wadą jest rozbicie funkcjonalności na różne wyszukiwarki oraz nieergonomiczny interfejs
-	\item jakdojade.pl - wyszukuje połączenia w obrębie danego miasta
-	\item rozklad-pkp.pl - wyszukuje połączenia kolejowe
+	\item e-podróżnik.pl -- aplikacja umożliwia wyszukiwanie połączeń PKS, PKP, MPK i prywatnych przewoźników autobusowych w obrębie kraju, międzynarodowych połączeń autokarowych oraz połączeń lotniczych. Jej wadą jest rozbicie funkcjonalności na różne wyszukiwarki oraz nieergonomiczny interfejs.
+	\item jakdojade.pl -- wyszukuje połączenia w obrębie danego miasta.
+	\item rozklad-pkp.pl -- wyszukuje połączenia kolejowe.
 \end{enumerate}
 \newpage
 \section{Ogólny opis}
 \subsection{Podstawowe funkcje}
-	Podstawowymi zadaniami realizowanymi przez aplikację są:
+%nr usunąć?
+	Podstawowymi zadaniami realizowanymi przez Przewodnika są:
 	\begin{enumerate}
-	 	\item Wyszukiwanie połączeń
-	 	\item Wyświetlanie informacji o połączeniach
-	 	\item Zbieranie danych i wyświetlanie statystyk podróży.
+	 	\item wyszukiwanie połączeń,
+	 	\item wyświetlanie informacji o połączeniach,
+	 	\item zbieranie danych i wyświetlanie statystyk podróży.
 	\end{enumerate}
 \subsection{Podstawowe cechy}
+%wat?
 	Aplikacja będzie szybka (krótki czas zwracania wyników wyszukiwania), intuicyjna (nawet osoby starsze mające problem z obsługą komputera powinny sobie poradzić z używaniem jej), ergonomiczna (interfejs powinien być prosty -- przejrzysty), przenośna (będzie można uruchomić ją na każdym urządzeniu spełniającym podstawowe wymagania opisane w dalszej części).
 \subsection{Ustalenia dotyczące środowiska}
 	Do działania aplikacji wymagana będzie dowolna przeglądarka internetowa obsługująca HTML5, CSS3 oraz JavaScript. Użytkownik nie może korzystać z programów typu Adblock Plus (blokujących reklamy) i NoScript (wyłączających obsługę JavaScript w przeglądarce).
-\subsection{Relacje do innych systemów}
+\subsection{Relacje z innymi systemami}
 	Aplikacja do części zadań będzie wykorzystywała zewnętrzne systemy. Ta sekcja opisuje ogólne powiązania między nimi.
 \begin{enumerate}
 	\item Dane o etapach podróży będą pobierane z serwisów odpowiednich przewoźników
@@ -119,15 +122,15 @@ Wersja 1.0
 \end{enumerate}
 \newpage
 \subsection{Ogólne ograniczenia}
-	Aplikacja ze względu na swoją złożoność jak również ilość powiązanych systemów zewnętrznych posiada następujące ograniczenia:	
+	Przewodnik ze względu na swoją złożoność jak również liczbę powiązanych systemów zewnętrznych posiada następujące ograniczenia:	
 \begin{enumerate}
-	\item Informacje o opóźnieniach -- dane te nie są udostępniane przez wszystkich przewoźników w związku z tym nie ma możliwości informowania o nich w naszej aplikacji
-	\item Informacje o cenie biletu -- ze względu na ilość różnych zniżek jak również nieuznawanie ich przez część przewoźników nie ma możliwości obliczenia ceny biletu
-	\item Informacje o dostępności miejsc -- część przewoźników nie posiada systemu rezerwacji lub informowania o ilości wolnych miejsc
-	\item Bezpośredni zakup biletu -- część przewoźników sprzedaje bilety tylko bezpośrednio w pojeździe, przed wyjazdem
+	\item Informacje o opóźnieniach -- dane te nie są udostępniane przez wszystkich przewoźników w związku z tym nie ma możliwości informowania o nich w naszej aplikacji.
+	\item Informacje o cenie biletu -- ze względu na różne zniżki jak również nieuznawanie ich przez część przewoźników nie ma możliwości obliczenia ceny biletu.
+	\item Informacje o dostępności miejsc -- część przewoźników nie posiada systemu rezerwacji lub informowania o ilości wolnych miejsc.
+	\item Bezpośredni zakup biletu -- część przewoźników sprzedaje bilety tylko bezpośrednio w pojeździe, przed wyjazdem.
 \end{enumerate}
 \subsection{Opis architektury}
-Aplikacja będzie składać się z dwóch, niezależnych od siebie, komponentów:
+Przewodnik będzie składać się z dwóch, niezależnych od siebie, komponentów:
 \begin{enumerate}
 	\item Aplikacja działająca w przeglądarce internetowej.
 	\item Aplikacja serwerowa, stanowiąca źródło danych dla aplikacji przeglądarkowej.
@@ -147,14 +150,14 @@ Aplikacja będzie składać się z dwóch, niezależnych od siebie, komponentów
 \end{enumerate}
 \subsection{Oszacowanie kosztów}
 \begin{enumerate}
-	\item Zatrudnienie programisty HTML5/CSS/JS na okres trzech miesięcy - 15,000 zł
-	\item Zatrudnienie programisty aplikacji serwerowej na okres trzech miesięcy - 18,000 zł
-	\item Zatrudnienie grafika na okres miesiąca - 4,000 zł
-	\item Zatrudnienie specjalisty w zakresie marketingu na okres dwunastu miesięcy - 20,000 zł
-	\item Wynajęcie serwera na pierwszy rok działalności - 2,000 zł
-	\item Wykupienie kampanii reklamowej w Internecie - 2,000 zł
-	\item Usługi prawnicze - 12,000 zł
-	\item Wynajęcie firmy testującej bezpieczeństwo aplikacji - 10,000 zł
+	\item Zatrudnienie programisty HTML5/CSS/JS na okres trzech miesięcy -- 15,000 zł
+	\item Zatrudnienie programisty aplikacji serwerowej na okres trzech miesięcy -- 18,000 zł
+	\item Zatrudnienie grafika na okres miesiąca -- 4,000 zł
+	\item Zatrudnienie specjalisty w zakresie marketingu na okres dwunastu miesięcy -- 20,000 zł
+	\item Wynajęcie serwera na pierwszy rok działalności -- 2,000 zł
+	\item Wykupienie kampanii reklamowej w Internecie -- 2,000 zł
+	\item Usługi prawnicze -- 12,000 zł
+	\item Wynajęcie firmy testującej bezpieczeństwo aplikacji -- 10,000 zł
 
 Łącznie: 83,000 zł
 \end{enumerate}
@@ -180,8 +183,8 @@ Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfe
 Testy będą podzielone na trzy grupy:
 \begin{enumerate}
 	\item Automatyczne testy jednostkowe -- testowanie każdej klasy z osobna, w całkowitej separacji od innych klas. Będą to testy tzw. "białej skrzynki", pisane będą przez dewelopera odpowiedzialnego za implementację danej klasy.
-	\item Automatyczne testy integracyjne -- testy obejmujące wszystkie moduły aplikacji, przeprowadzane w metodzie "czarnej skrzynki", pisane przez deweloperów projektu oraz zewnętrzą firmę przeprowadzającą testy. Testy te będą symulować czynności użytkownika, zdefiniowane w scenariuszach testowych.
-	\item Testy z użytkownikami -- testy, podczas których reprezentatywna grupa losowych osób będzie wykonywać zadane scenariusze, następnie w krótkich formularzach wyrażą swoje opinie na temat interfejsu użytkownika i ogólnej użyteczności programu. Na tyms topniu testów będą porównywane różne wersje poszczególnych elementów interfejsu użytkownika (AB testy) pod kątem ergonomii i ilości konwersji. Testy będą przeprowadzane przez zewnętrzną firmę.
+	\item Automatyczne testy integracyjne -- testy obejmujące wszystkie moduły aplikacji, przeprowadzane w metodzie "czarnej skrzynki", pisane przez deweloperów projektu oraz zewnętrzną firmę przeprowadzającą testy. Testy te będą symulować czynności użytkownika, zdefiniowane w scenariuszach testowych.
+	\item Testy z użytkownikami -- testy, podczas których reprezentatywna grupa losowych osób będzie wykonywać zadane scenariusze, następnie w krótkich formularzach wyrażą swoje opinie na temat interfejsu użytkownika i ogólnej użyteczności programu. Na tym porównywane testów będą porównywane różne wersje poszczególnych elementów interfejsu użytkownika (AB testy) pod kątem ergonomii i ilości konwersji. Testy będą przeprowadzane przez zewnętrzną firmę.
 \end{enumerate}
 \subsection{Wymagania dotyczące niezawodności}
 \begin{enumerate}
@@ -190,10 +193,10 @@ Testy będą podzielone na trzy grupy:
 \end{enumerate}
 \subsection{Wymagania dotyczące etapu eksploatacji}
 \begin{enumerate}
-	\item Utrzymanie zespołu programistów, testerów i grafika do rozwijania i konserwacji aplikacji
-	\item Regularne testy aplikacji oraz serwerów
-	\item Przygotowywanie kampanii reklamowych
-	\item Wdrażanie nowych technologii oraz rozszerzanie funkcjonalności
+	\item Utrzymanie zespołu programistów, testerów i grafika do rozwijania i konserwacji aplikacji.
+	\item Regularne testy aplikacji oraz serwerów.
+	\item Przygotowywanie kampanii reklamowych.
+	\item Wdrażanie nowych technologii oraz rozszerzanie funkcjonalności.
 \end{enumerate}	
 \subsection{Wymagania dotyczące bezpieczeństwa systemu}
 	Zatrudnienie specjalnej zewnętrznej firmy do regularnego wykonywania testów bezpieczeństwa zarówno aplikacji jak i serwerów. Ważnym elementem dla bezpieczeństwa systemu jest prawne zobowiązanie pracowników do nieupubliczniania informacji o projekcie.
