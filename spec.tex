@@ -89,7 +89,7 @@ Wersja 1.0
 	\item Ulubione trasy -- trasy oznaczone przez użytkownika w celu szybszego wyszukiwania połączeń.
 \end{enumerate}
 \subsection{Uzasadnienie rynkowe zapotrzebowania na system}
-	Istnieje wiele aplikacji realizujących podobne funkcje, jednak skupiają się zwykle tylko na konkretnym typie podróży -- miejskiej lub międzymiastowej. Przewodnik ma za zadanie połączyć te dwie funkcje i udostępnić użytkownikowi kompleksową usługę wyszukiwania tras. Co więcej, użytkownik będzie mógł dodawać wybrane trasy do ulubionych, co umożliwi w przyszłości szybsze wyszukiwanie. Dostępny będzie również moduł ze statystykami odbytych podróży.
+	Istnieje wiele aplikacji realizujących podobne funkcje, jednak skupiają się zwykle tylko na konkretnym typie podróży -- miejskiej lub międzymiastowej. Przewodnik ma za zadanie połączyć te dwie funkcje i udostępnić użytkownikowi kompleksową usługę wyszukiwania tras. Co więcej, użytkownik może dodawać wybrane trasy do ulubionych, co umożliwi w przyszłości szybsze wyszukiwanie. Dostępny jest również moduł ze statystykami odbytych podróży.
 \newpage
 \subsection{Krótki przegląd podobnych rozwiązań}
 \begin{enumerate}
@@ -102,18 +102,18 @@ Wersja 1.0
 \subsection{Podstawowe funkcje}
 %nr usunąć?
 	Podstawowymi zadaniami realizowanymi przez Przewodnika są:
-	\begin{enumerate}
+	\begin{itemize}
 	 	\item wyszukiwanie połączeń,
 	 	\item wyświetlanie informacji o połączeniach,
 	 	\item zbieranie danych i wyświetlanie statystyk podróży.
-	\end{enumerate}
+	\end{itemize}
 \subsection{Podstawowe cechy}
 %wat?
 	Aplikacja będzie szybka (krótki czas zwracania wyników wyszukiwania), intuicyjna (nawet osoby starsze mające problem z obsługą komputera powinny sobie poradzić z używaniem jej), ergonomiczna (interfejs powinien być prosty -- przejrzysty), przenośna (będzie można uruchomić ją na każdym urządzeniu spełniającym podstawowe wymagania opisane w dalszej części).
 \subsection{Ustalenia dotyczące środowiska}
-	Do działania aplikacji wymagana będzie dowolna przeglądarka internetowa obsługująca HTML5, CSS3 oraz JavaScript. Użytkownik nie może korzystać z programów typu Adblock Plus (blokujących reklamy) i NoScript (wyłączających obsługę JavaScript w przeglądarce).
+	Do działania Przewodnika wymagana jest dowolna przeglądarka internetowa obsługująca HTML5, CSS3 oraz JavaScript. Użytkownik nie może korzystać z programów typu Adblock Plus (blokujących reklamy) i NoScript (wyłączających obsługę JavaScript w przeglądarce).
 \subsection{Relacje z innymi systemami}
-	Aplikacja do części zadań będzie wykorzystywała zewnętrzne systemy. Ta sekcja opisuje ogólne powiązania między nimi.
+	Przewodnik do części zadań będzie wykorzystywała zewnętrzne systemy. Ten podrozdział opisuje ogólne powiązania między nimi.
 \begin{enumerate}
 	\item Dane o etapach podróży będą pobierane z serwisów odpowiednich przewoźników
 	\item Wyświetlanie danych na mapie jest realizowane przez maps.google.com
@@ -130,12 +130,12 @@ Wersja 1.0
 	\item Bezpośredni zakup biletu -- część przewoźników sprzedaje bilety tylko bezpośrednio w pojeździe, przed wyjazdem.
 \end{enumerate}
 \subsection{Opis architektury}
-Przewodnik będzie składać się z dwóch, niezależnych od siebie, komponentów:
+Przewodnik składa się z dwóch, niezależnych od siebie, komponentów:
 \begin{enumerate}
 	\item Aplikacja działająca w przeglądarce internetowej.
 	\item Aplikacja serwerowa, stanowiąca źródło danych dla aplikacji przeglądarkowej.
 \end{enumerate} 
-	Aplikacja przeglądarkowa będzie łączyć się z aplikacją serwerową, będącą interfejsem do bazy danych i zewnętrznych źródeł danych.
+	Aplikacja przeglądarkowa łączy się z aplikacją serwerową, będącą interfejsem do bazy danych i zewnętrznych źródeł danych.
 \subsection{Oszacowanie pracochłonności}
 \begin{enumerate}
 	\item Opracowanie projektu interfejsu użytkownika -- 2 tygodnie.
@@ -165,18 +165,19 @@ Przewodnik będzie składać się z dwóch, niezależnych od siebie, komponentó
 \blankpage
 \section{Specyficzne wymagania}
 \subsection{Wymagania dotyczące wydajności systemu}
-	Aplikacja ma zacząć zwracać pierwsze wyniki w czasie mniejszym niż 5 sekund. Reszta wyników może być generowana w tle i uzupełniana w czasie kiedy użytkownik będzie już przeglądał pierwsze wyniki.
+	Aplikacja ma zacząć zwracać pierwsze wyniki w czasie mniejszym niż 5 sekund. Reszta wyników może być generowana w tle i uzupełniana w czasie kiedy użytkownik przegląda pierwsze wyniki.
 \subsection{Wymagania dotyczące zewnętrznych interfejsów}
-Aplikacja działająca w przeglądarce internetowej korzystać będzie z interfejsu programistycznego aplikacji serwerowej, dostępnego w protokole HTTP. Interfejs ten będzie umożliwiać połączenie z aplikacją serwerową dowolnemu typowi aplikacji (binarna dla komputerów PC, mobilna, internetowa), także dla aplikacji podmiotów trzecich -- w tym wypadku wymagana będzie identyfikacja każdej aplikacji korzystającej z udostępnionego interfejsu (programistycznego).
+Aplikacja działająca w przeglądarce internetowej korzysta z interfejsu programistycznego aplikacji serwerowej, dostępnego w protokole HTTP. Interfejs ten umożliwia połączenie z aplikacją serwerową dowolnemu typowi aplikacji (binarna dla komputerów PC, mobilna, internetowa), także dla aplikacji podmiotów trzecich -- w tym wypadku wymagana jest identyfikacja każdej aplikacji korzystającej z udostępnionego interfejsu (programistycznego).
 \subsection{Wymagania dotyczące wykonywanych operacji}
-	Aplikacja powinna wyszukiwać połączenia pomiędzy dwoma adresami w danym mieście jak również pomiędzy dwoma miastami. W razie potrzeby łączyć wiele różnych etapów podróży aby otrzymać trasę wybraną przez użytkownika. Powinna udostępniać takie informacje jak czas podróży, godzina i miejsce przesiadek oraz dane kontaktowe przewoźnika dla każdego etapu podróży. Aplikacja będzie udostępniać panel ze statystykami poprzednich podróży oraz panel opcji społecznościowych.
+	Aplikacja powinna wyszukiwać połączenia pomiędzy dwoma adresami w danym mieście jak również pomiędzy dwoma miastami. W razie potrzeby łączyć wiele różnych etapów podróży aby otrzymać trasę wybraną przez użytkownika. Powinna udostępniać takie informacje jak czas podróży, godzina i miejsce przesiadek oraz dane kontaktowe przewoźnika dla każdego etapu podróży. Aplikacja udostępnia panel ze statystykami poprzednich podróży oraz panel opcji społecznościowych.
+\newpage
 \subsection{Wymagania dotyczące zasobów}
 \begin{enumerate}
-	\item Zespół programistów
-	\item Zespół testujący oprogramowanie
+	\item Zespół programistów -- składa się z dwóch osób, które zajmują się pisaniem odpowiednich części systemu. Jedna zajmuje się programowaniem aplikacji internetowej i interfejsów użytkownika używając głównie takich technologii jak HTML, CSS, JavaScript. Druga tworzy aplikację serwerową jak również zajmuje się przeprowadzaniem testów.  
+	\item Zespół testujący oprogramowanie -- za przeprowadzanie testów odpowiedzialny jest jeden z programistów jak również zatrudniony specjalnie do tego zadania podwykonawca. Programista ma za zadanie testować aplikację metodą białej skrzynki, podwykonawca zaś metodą czarnej skrzynki jak również symulując pracę użytkownika. Dzięki temu podwykonawca nie musi analizować oprogramowania przed jego testowaniem i spędzi więcej czasu rzeczywiście testując a nie starając się zrozumieć kod.
 	\item Grafik
-	\item Specjalista do kontaktu z klientami
-	\item Serwery
+	\item Specjalista do kontaktu z klientami i reklamy -- jego zadaniem jest przeprowadzeniem kampanii reklamowej na popularnych stronach internetowych zaraz po zakończeniu prac nad Przewodnikiem jak również późniejsze kontynuowanie budowania marki i popularyzowania jej na portalach społecznościowych. Jego zadaniem jest również odpowiadanie na korespondencję elektroniczną nadesłaną przez użytkowników.
+	\item Serwery -- w celu zapewnienia niezawodności działania usługi wymagane jest zakupienie kilku serwerów w różnych położeniach geograficznych. Wszystkie dane na serwerach są systematycznie archiwizowane. W razie awarii serwera dane nie zostaną stracone a aplikacja w dalszym ciągu działa. Niektóre z serwerów spełniają określone zadania takie jak przechowywanie bazy danych czy przechowywanie treści multimedialnych (zdjęcia, filmy). 
 \end{enumerate}
 \newpage
 \subsection{Wymagania dotyczące sposobów testowania}
@@ -184,12 +185,12 @@ Testy będą podzielone na trzy grupy:
 \begin{enumerate}
 	\item Automatyczne testy jednostkowe -- testowanie każdej klasy z osobna, w całkowitej separacji od innych klas. Będą to testy tzw. "białej skrzynki", pisane będą przez dewelopera odpowiedzialnego za implementację danej klasy.
 	\item Automatyczne testy integracyjne -- testy obejmujące wszystkie moduły aplikacji, przeprowadzane w metodzie "czarnej skrzynki", pisane przez deweloperów projektu oraz zewnętrzną firmę przeprowadzającą testy. Testy te będą symulować czynności użytkownika, zdefiniowane w scenariuszach testowych.
-	\item Testy z użytkownikami -- testy, podczas których reprezentatywna grupa losowych osób będzie wykonywać zadane scenariusze, następnie w krótkich formularzach wyrażą swoje opinie na temat interfejsu użytkownika i ogólnej użyteczności programu. Na tym porównywane testów będą porównywane różne wersje poszczególnych elementów interfejsu użytkownika (AB testy) pod kątem ergonomii i ilości konwersji. Testy będą przeprowadzane przez zewnętrzną firmę.
+	\item Testy z użytkownikami -- testy, podczas których reprezentatywna grupa losowych osób wykonuje zadane scenariusze, następnie w krótkich formularzach wyrażą swoje opinie na temat interfejsu użytkownika i ogólnej użyteczności programu. Na tym porównywane testów będą porównywane różne wersje poszczególnych elementów interfejsu użytkownika (AB testy) pod kątem ergonomii i ilości konwersji. Testy będą przeprowadzane przez zewnętrzną firmę.
 \end{enumerate}
 \subsection{Wymagania dotyczące niezawodności}
 \begin{enumerate}
-	\item Aplikacja będzie udostępniana przez wiele serwerów, więc w razie awarii jednego z nich dalej będzie aktywna.
-	\item Baza danych połączeń będzie systematycznie aktualizowana, co zapobiegnie wyświetlaniu tras niemożliwych do zrealizowania.
+	\item Aplikacja jest udostępniana przez wiele serwerów, więc w razie awarii jednego z nich dalej będzie aktywna.
+	\item Baza danych połączeń jest systematycznie aktualizowana, co zapobiegnie wyświetlaniu tras niemożliwych do zrealizowania.
 \end{enumerate}
 \subsection{Wymagania dotyczące etapu eksploatacji}
 \begin{enumerate}
